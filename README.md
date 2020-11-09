@@ -83,13 +83,26 @@ Finally we can see the logs of the app as soon as the webhook is received (it ca
 curl "https://webhook.murdix.com/logs"
 ```
 
+Dont forget to clean the targets and append new ones to try!
+
+Review active targets
+```bash
+curl "https://webhook.murdix.com/target"
+```
+
+Clean targets
+```bash
+curl "https://webhook.murdix.com/clean"
+```
+
+
 ## Automated tests
 A small test suite is provided in the `test.sh` script. This script is very similar to the commands herein presented. It adds four targets: two Log, 
 one HTTP and one Slack message. Then it simulates a webhook message from Sqreen.io and it shows in the screen the content of the logs in the server. 
 Finally it cleans everything for a fresh start (except the logs, logs are persisted for the live of the container in the server). 
 
 ## Requirements
-### sq-Front
+### sq-front
 - [Node.js](https://nodejs.org/): JavaScript runtime to build the project
 - [npm](https://www.npmjs.com/): Node package manager to install dependencies.
 - [Docker](https://www.docker.com/): Package software into standardized units for development, shipment and deployment.
