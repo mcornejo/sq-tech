@@ -1,0 +1,18 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# https://www.playframework.com/documentation/latest/ScalaRouting
+# ~~~~
+
+# An example controller showing a sample home page
++ nocsrf
+POST     /                         controllers.ApplicationController.webhook
+GET     /                          controllers.ApplicationController.home
+GET     /logs                      controllers.ApplicationController.readLogs
+
++ nocsrf
+POST    /target                    controllers.TargetController.addTarget
+GET     /target                    controllers.TargetController.listTargets
+GET     /clean                     controllers.TargetController.cleanTargets
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file              controllers.Assets.versioned(path="/public", file: Asset)

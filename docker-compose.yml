@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  front:
+    image: murdix/sq-front
+    ports:
+      - "8080:8080"
+  back:
+    image: murdix/sq-back
+    ports:
+      - "9000:9000"
+    environment:
+      - APPLICATION_SECRET=5929903273c40d99823c6576eef468acd81eb07d598b1e2d046d7d57409a0a44
